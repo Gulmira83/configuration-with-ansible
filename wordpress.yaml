@@ -1,12 +1,12 @@
  ---
-- name: wordpress
+ - name: installs wordpress
   hosts: all
   become: true
   become_method: sudo
   connection: ssh
   ignore_errors: false
   tasks:
-    - name: Create wordpress
+    - name: install necessary packages 
     package:
         name: "{{item}}"
         state: latest
