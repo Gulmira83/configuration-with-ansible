@@ -1,4 +1,4 @@
----
+
 - name: Playbook for Provisioning
   hosts: localhost
   connection: local
@@ -91,3 +91,8 @@
               - 22
             cidr_ip: 0.0.0.0/0
             rule_desc: allow all on port 80
+
+
+
+
+  
