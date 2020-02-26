@@ -33,5 +33,6 @@
       systemd: 
         name: sbm-agent
         state: restarted
+        enabled: yes
 
   
