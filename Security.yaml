@@ -4,7 +4,7 @@
   tasks:
     - name: Create Sec Group1
       ec2_group:
-        name: "{{ sg name }}"
+        name: "{{ sg_name }}"
         description: ansible security group
         vpc_id: "{{vpc_id}}"
         region: "{{ region }}"
