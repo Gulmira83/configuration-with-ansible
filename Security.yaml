@@ -8,6 +8,7 @@
       ec2_group:
         name: "{{ sg_name }}"
         description: ansible security group
+        vpc_id: "{{vpc_id}}"
         region: "{{ region }}"
         rules:
           - proto: tcp
