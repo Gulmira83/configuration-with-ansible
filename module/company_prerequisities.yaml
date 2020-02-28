@@ -6,6 +6,7 @@
   connection: ssh
   ignore_errors: false
   roles:
-    - {company_prerequisities}
+    - {role: company_prerequisities}
+    - {role: wordpress}
     
       
