@@ -1,0 +1,9 @@
+---
+- name: Create new nat gateway, using an EIP address  and wait for available status.
+  ec2_vpc_nat_gateway:
+    state: present
+    subnet_id: subnet-00e2166690e7a072b
+    eip_address: 54.188.111.208
+    wait: yes
+    region: us-west-2
+  register: new_nat_gateway

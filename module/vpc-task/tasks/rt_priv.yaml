@@ -1,0 +1,25 @@
+---
+- name: Playbook for Route table for  Private
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Collect VPC info
+      ec2_vpc_net_facts:
+        region: us-west-2
+        filters:
+          "tag:Task": VPC
+      register: VPC1
+
+    - name: Set up private subnet route table
+      ec2_vpc_route_table:
+        vpc_id: vpc-0bcfa0c38ee62c348
+        region: us-west-2
+        tags:
+          Name: private
+        subnets:
+          - subnet-065d2d3aed8218bf5
+          - subnet-093353667e96a37d5
+          - subnet-0cfa5bc905070b262
+        routes:
+          - dest: 10.0.0.0/16
+      register: private_route_table
